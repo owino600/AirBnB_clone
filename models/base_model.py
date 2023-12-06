@@ -3,7 +3,7 @@ from uuid import uuid4
 from datetime import datetime
 import models
 
-class Basemodel:
+class BaseModel:
     """ base for all the projects in the AirBnb console project
     Arttributes:
     id(str): create a unique id
@@ -47,7 +47,7 @@ class Basemodel:
                             Update public instance attribute
                             'Update_at' - with the current datetime
                             """
-                            self.update_at = datetime.utcnow()
+                            self.updated_at = datetime.utcnow()
                             models.storage.save()
 
                             def to_dict(self):
