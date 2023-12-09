@@ -35,7 +35,7 @@ in a OOP project is the representation of an object/instance.
 #file_storage.py
 
 ## Storage
-##execution
+## Execution
 - my code is expected to execute this in interactive mode
 $ ./console.py
 (hbnb) help
