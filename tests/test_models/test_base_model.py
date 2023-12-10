@@ -3,7 +3,12 @@
 Module for BaseModel unittest
 """
 import os
+import re
+import json
+import uuid
 import unittest
+from time import sleep
+from datetime import datetime
 from models.base_model import BaseModel
 
 
@@ -83,6 +88,12 @@ class TestBasemodel(unittest.TestCase):
         self.assertIn(my_model.id, str(my_model))
 
         self.assertIn(str(my_model.__dict__), str(my_model))
+        
+        def test_datetime(self):
+            """
+            Test for correct date
+            """
+            pass
 
 
 if __name__ == "__main__":
