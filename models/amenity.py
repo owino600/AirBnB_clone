@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 from models.base_model import BaseModel
-class amenity(BaseModel):
+class Amenity(BaseModel):
     """
     attribute:
     name (str): name of ammenity
     """
-    amenity = ""
+    name: str = ""

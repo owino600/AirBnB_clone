@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 from models.base_model import BaseModel
+from typing import List
 class place(BaseModel):
     """
     city_id (str): name of city
@@ -14,14 +15,14 @@ class place(BaseModel):
     longitude (float): longitude of place
     amenity_ids (str): list of ammenity_ids
     """
-    city_id = ""
-    user_id = ""
-    name = ""
-    description = ""
-    number_rooms = 0
+    city_id: str = ""
+    user_id: str = ""
+    name: str = ""
+    description: str = ""
+    number_rooms: int = 0
     number_bathrooms = 0
     max_guest = 0
     price_by_night = 0
     latitude = 0.0
     longitude = 0.0
-    amenity_ids = []
+    amenity_ids: List[str] = []
