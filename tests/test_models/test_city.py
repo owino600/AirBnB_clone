@@ -5,7 +5,8 @@ import models
 import unittest
 from datetime import datetime
 from models.base_model import BaseModel
-class Testcity(unittest.TestCase):
+
+class TestCity(unittest.TestCase):
     """
     test for city
     """

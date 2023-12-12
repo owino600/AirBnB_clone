@@ -4,7 +4,7 @@
 Module for serializing and deserializing data
 """
 import json
-from os import path
+import os
 from models.base_model import BaseModel
 from models.user import User
 from models.amenity import Amenity
