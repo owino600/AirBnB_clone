@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 from models.base_model import BaseModel
 from typing import List
-class place(BaseModel):
+class Place(BaseModel):
     """
     city_id (str): name of city
     user_id (str): user id
