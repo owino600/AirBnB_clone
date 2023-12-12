@@ -4,7 +4,7 @@
 Module for serializing and deserializing data
 """
 import json
-import os
+from os import path
 from models.base_model import BaseModel
 from models.user import User
 from models.amenity import Amenity
@@ -22,6 +22,15 @@ class FileStorage:
 
     __objects = {}
 
+    CLASSES = {
+            'BaseModel': BaseModel,
+            'User': User,
+            'City': City,
+            'Amenity': Amenity,
+            'Place': Place,
+            'Review': Review
+            }
+
     def new(self, obj):
         """
          Sets an object in the __objects dictionary with a key of 
@@ -31,7 +40,7 @@ class FileStorage:
 
         key = "{}.{}".format(obj_cls_name, obj.id)
 
-        FileStorage.__objects[key] = obj
+        self.__objects[key] = obj
 
 
     def all(self):
@@ -47,12 +56,10 @@ class FileStorage:
         Serializes the __objects dictionary into 
         JSON format and saves it to the file specified by __file_path.
         """
-        all_objs = FileStorage.__objects
-
         obj_dict = {}
 
-        for obj in all_objs.keys():
-            obj_dict[obj] = all_objs[obj].to_dict()
+        for key, obj in self.__objects.items():
+            obj_dict[key] = obj.to_dict()
 
         with open(FileStorage.__file_path, "w", encoding="utf-8") as file:
             json.dump(obj_dict, file)
